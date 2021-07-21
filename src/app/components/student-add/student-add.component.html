@@ -1,49 +1,49 @@
 <div class="container">
   <h2>student Registration form</h2>
-  <form>
+  <form [formGroup]="studentForm">
    <div class="row">
      <div class="col-md-6">
-       
           <div class="form-group">
              <label>Student name:</label>
-             <input type="text" class="form-control" formControlName="studentname" name="studentname">
+             <input type="text" class="form-control" formControlName="studentname" name="studentname" required> 
           </div>
           <div class="form-group">
             <label>Student Email:</label>
             <input type="email" class="form-control" formControlName="emailid" name="emailid">
-         </div>
-         <div class="form-group">
+          </div>
+          <div class="form-group">
             <label>Student Mobile no:</label>
             <input type="tel" class="form-control" formControlName="mobile" name="mobile">
+          </div>
+          <div class="form-group">
+            <label>Branch:</label>
+            <input type="text" class="form-control" formControlName="branch" name="branch">
+         </div>
+          <div class="form-group">
+            <label>Student:</label>&nbsp;
+            <input type="checkbox" value="Student" formControlName="isstudent" name="isstudent">
+         </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+     </div>
+     <div class="col-md-6">
+         <div class="form-group">
+            <label>College Name::</label>
+            <input type="text" class="form-control" formControlName="College" name="College">
          </div>
          <div class="form-group">
+            <label>Passed out:</label>
+            <input type="text" class="form-control" formControlName="passout" name="passout">
+        </div>
+         <div class="form-group">
+            <label>Student Image:</label>
+            <input type="file" class="form-control" formControlName="pic" name="pic">
+         </div>
+        <div class="form-group">
             <label>City:</label>
             <input type="text" class="form-control" formControlName="city" name="city">
         </div>
-      
-     </div>
-     <div class="col-md-6">
-      <div class="form-group">
-        <label>College Name::</label>
-        <input type="text" class="form-control" formControlName="College" name="College">
-     </div>
-     <div class="form-group">
-       <label>Passed out:</label>
-       <input type="text" class="form-control" formControlName="passout" name="passout">
-    </div>
-    <div class="form-group">
-       <label>Student Image:</label>
-       <input type="file" class="form-control" formControlName="pic" name="pic">
-    </div>
-    <div class="form-group">
-       <label>City:</label>
-       <input type="text" class="form-control" formControlName="city" name="city">
-   </div>
-   <div class="form-group">
-    <label>Student:</label>
-    <input type="checkbox" class="form-control" value="Student" formControlName="isstudent" name="isstudent">
-   </div>
     </div>
    </div>
   </form>
+  {{studentForm.value | json}}
 </div>
